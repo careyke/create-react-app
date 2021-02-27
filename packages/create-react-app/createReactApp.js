@@ -250,6 +250,8 @@ function createApp(name, verbose, version, template, useNpm, usePnp) {
 
   const root = path.resolve(name);
   const appName = path.basename(root);
+  // console.log(name, root, appName);
+  // return;
 
   checkAppName(appName);
   fs.ensureDirSync(name);

@@ -47,16 +47,17 @@ console.log();
 // Temporarily overwrite package.json of all packages in monorepo
 // to point to each other using absolute file:/ URLs.
 
-const gitStatus = cp.execSync(`git status --porcelain`).toString();
+//暂时屏蔽对于git status的检查
+// const gitStatus = cp.execSync(`git status --porcelain`).toString();
 
-if (gitStatus.trim() !== '') {
-  console.log('Please commit your changes before running this script!');
-  console.log('Exiting because `git status` is not empty:');
-  console.log();
-  console.log(gitStatus);
-  console.log();
-  process.exit(1);
-}
+// if (gitStatus.trim() !== '') {
+//   console.log('Please commit your changes before running this script!');
+//   console.log('Exiting because `git status` is not empty:');
+//   console.log();
+//   console.log(gitStatus);
+//   console.log();
+//   process.exit(1);
+// }
 
 const rootDir = path.join(__dirname, '..');
 const packagesDir = path.join(rootDir, 'packages');
